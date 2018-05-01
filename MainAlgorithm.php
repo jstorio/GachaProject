@@ -1,5 +1,9 @@
 <?php
 
+/* I know this is written in PHP instead of JS. I was coding this on a site called OnlinePHPFunction using their online sandbox. 
+it had a serviceable text editor at the time so... */
+
+
 //Values
 $rollVal;
 $boolean = true;
