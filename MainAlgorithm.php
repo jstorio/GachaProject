@@ -5,8 +5,10 @@ $rollVal;
 $boolean = true;
 $counter = 0;
 
-//mt_rand function only uses integers so all probability values must be
-//multiplied by 10 to accomodate correct probability values. eg 2.5% = 25;
+/*
+mt_rand function only uses integers so all probability values must be
+multiplied by 10 to accomodate correct probability values. eg 2.5% = 25;
+*/
 $commonRate = array(1000,501); //50%
 $uncommonRate = array(500,251); //25%
 $rareRate = array(250,101); //15%
@@ -24,23 +26,26 @@ $INITextremelyRareRate = 26;
 //Functions
 
 function decreaseIncreaseRates(){
-    //use function to adjust other rates to increase probability of getting an
-    //extremely rare when $rollValue did not get a winning roll.
-    //chance to get extremely rare goes up by .25% (2.50) per unsuccessful roll.
-    //[0] = probability ceiling, [1] = probability floor. 
+    /* 
+    use function to adjust other rates to increase probability of getting an
+    extremely rare when $rollValue did not get a winning roll.
+    chance to get extremely rare goes up by .25% (2.50) per unsuccessful roll.
+    [0] = probability ceiling, [1] = probability floor. 
+    */
     
     //global variables to access probability array and counter
     global $commonRate, $uncommonRate, $rareRate, $veryRareRate,
            $extremelyRareRate, $INITcommonRate, $INITuncommonRate, 
            $INITrareRate, $INITveryRareRate, $INITextremelyRareRate, $counter;
-    
-    //ceiling cap of 1000 remains.
-    //commons decrease probability by 0.0625% (0.625)
+   
+    //ceiling cap of 1000 remains. commons decrease probability by 0.0625% (0.625)
     $commonRate[1] += 0.625;
     
-    //uncommons increase ceiling cap to adjust with common probability drop.
-    //add same amount to probability floor, then add in 0.0625% (0.625)
-    //for probability drop.
+    /* 
+    uncommons increase ceiling cap to adjust with common probability drop.
+    add same amount to probability floor, then add in 0.0625% (0.625)
+    for probability drop. 
+    */
     $uncommonRate[0] += 0.625;
     $uncommonRate[1] += 1.25;
     
