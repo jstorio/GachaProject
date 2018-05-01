@@ -1,3 +1,5 @@
+<?php
+
 //Values
 $rollVal;
 $boolean = true;
@@ -111,3 +113,5 @@ while ($boolean){
        $boolean=false;
     }
 }//END while function
+
+?>
