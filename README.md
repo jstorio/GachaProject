@@ -15,6 +15,21 @@ The JS algorithm will be based on Math.Random() in determining a random roll. As
 
 While mt_rand() seems sufficient enough to generate random integers from 1-100 (denoting 1-100%), there is 1 problem: mt_rand() cannot generate decimals. In order to at least recognize the first decimal figure, I have to multiply the maximum range by 10 hence: 1-1000. This way, a probability chance of 2.5% can be represented as 25.
 
+Here is an example output of the gacha_algorithm.php:
+
+```
+You rolled 24 times and got an Extremely Rare roll!
+Winning Roll: 76
+Range: 110 - 26
+
+RATES:
+Common: 48.4% 
+Uncommon: 23.4% 
+Rare: 13.4% 
+Very Rare: 3.4% 
+Extremely Rare: 8.4%
+```
+
 I am sure there are more efficient ways to get a workaround on this on the PHP side, but I hope I could find a comprehensive Random function library for JS and use that instead.
 
 # Design Choices and Implementation
