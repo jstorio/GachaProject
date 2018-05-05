@@ -34,8 +34,8 @@ I am sure there are more efficient ways to get a workaround on this on the PHP s
 
 # Design Choices and Implementation
 There will be 2 main parts of the project:
-1.) Browser
-2.) Web App
+- Browser
+- Web App
 
 ## Browser
 A browser extension will be needed to fully use the application. In the early stages of development, the extension will be using 2 Javascript APIs namely: WebNavigation and BrowserAction. These APIs will be used to track user browser activities such as loading webpages, returning/back, clicking links, etc. Every action will generate currency which can then be used on the Web App.
@@ -45,4 +45,4 @@ A browser extension will be needed to fully use the application. In the early st
 - Additional JS APIs are planned for future releases such as: Bookmarks, Downloads, Menus, Notifications, and SidebarAction.
 
 ## Web App
-**WIP**
+The webapp will be accessible via a desktop browser or a mobile browser. It will be responsive in design and is focused more on mobile usability. This is where everything can be configured from the account settings, to the main gacha system. 
