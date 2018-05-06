@@ -1,0 +1,20 @@
+{
+
+  "manifest_version": 2,
+  "name": "GachaExtension",
+  "version": "1.0",
+
+  "description": "Tracks internet navigation actions to generate virtual currency.",
+
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.mozilla.org/*"],
+      "js": ["gachaextension.js"]
+    }
+  ]
+
+}
