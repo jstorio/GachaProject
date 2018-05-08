@@ -1,3 +1,11 @@
 //initial groundwork for js mozilla browser extension.
 
-document.body.style.border = "5px solid red";
+var currency = 0;
+
+function addCurrency () {
+	currency = currency + 1;
+	window.alert(currency);
+};
+
+browser.webNavigation.onCompleted.addListener (addCurrency);
+browser.webRequest.onBeforeRequest.addListener (addCurrency);
