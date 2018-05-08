@@ -6,15 +6,15 @@
 
   "description": "Tracks internet navigation actions to generate virtual currency.",
 
+  "permissions": [
+      "webNavigation", "webRequest"
+],
+
   "icons": {
     "48": "icons/border-48.png"
   },
 
-  "content_scripts": [
-    {
-      "matches": ["*://*.mozilla.org/*"],
-      "js": ["gachaextension.js"]
+  "background": { 
+      "scripts": ["gachaextension.js"]
     }
-  ]
-
 }
