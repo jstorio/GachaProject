@@ -6,7 +6,7 @@ var currency = 0;
 //adds currency for every triggered even
 function addCurrency () {
 	currency = currency + 1;
-	window.alert(currency + " - Trigger: onDOMContentLoaded");
+	window.alert(currency + " - Trigger: webNavigation.onBeforeNavigate");
 };
 
 //*****TRIGGERS*****//
