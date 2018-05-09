@@ -1,11 +1,14 @@
 //initial groundwork for js mozilla browser extension.
 
+//placeholder for local currency
 var currency = 0;
 
+//adds currency for every triggered even
 function addCurrency () {
 	currency = currency + 1;
-	window.alert(currency);
+	window.alert(currency + " - Trigger: onDOMContentLoaded");
 };
 
-browser.webNavigation.onCompleted.addListener (addCurrency);
-browser.webRequest.onBeforeRequest.addListener (addCurrency);
+//*****TRIGGERS*****//
+
+browser.webNavigation.onBeforeNavigate.addListener (addCurrency);
