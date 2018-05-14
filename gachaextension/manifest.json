@@ -10,8 +10,13 @@
       "webNavigation", "webRequest"
 ],
 
-  "icons": {
-    "48": "icons/border-48.png"
+  "browser_action": {
+    "browser_style": true,
+    "default_popup": "popups/gachapopup.html",
+    "default_icon": {
+      "16": "icons/icon_joypad.png",
+      "32": "icons/icon_joypad.png"
+  }
   },
 
   "background": { 
