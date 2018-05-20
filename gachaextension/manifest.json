@@ -7,7 +7,7 @@
   "description": "Tracks internet navigation actions to generate virtual currency.",
 
   "permissions": [
-      "webNavigation", "webRequest"
+      "webNavigation", "webRequest", "storage"
 ],
 
   "browser_action": {
