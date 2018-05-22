@@ -1,6 +1,6 @@
 //initial groundwork for js mozilla browser extension.
 
-//TESTING GIT 1
+//Hi Glory
 
 //placeholder for local currency
 var currency = 0;
