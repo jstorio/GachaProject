@@ -1,5 +1,7 @@
 //initial groundwork for js mozilla browser extension.
 
+//TESTING GIT
+
 //placeholder for local currency
 var currency = 0;
 var fs = require('fs');
