@@ -1,7 +1,12 @@
 html, body {
   width: 500px;
-  height: 250px;
+  height: 500px;
   background-color: #f8c471;
+}
+
+p {
+  font-size: 32px;
+  text-align: center;
 }
 
 .page-choice {

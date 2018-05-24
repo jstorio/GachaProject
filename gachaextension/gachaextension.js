@@ -1,24 +1,23 @@
 //initial groundwork for js mozilla browser extension.
 
-//Hi Glory
+browser.storage.local.set({
+	stash: {stashCurrency: 0}
+	});
 
-//placeholder for local currency
-var currency = 0;
-var fs = require('fs');
+var localCurrency = 0;
 
-var jsonCurrencyCont = fs.readFileSync("currency.json");
-var jsonCurrency = JSON.parse(jsonCurrencyCont);
 
-function addCurrencyOnBeforeNavigate () {
+function addCurrency() {
+	localCurrency = localCurrency + 1;
 
-	jsonCurrency.currency = jsonCurrency + 1;
-	window.alert(jsonCurrency.currency + " - Trigger: webNavigation.onBeforeNavigate");
-};
+	browser.storage.local.set({
+		stash: {stashCurrency: localCurrency}
+	});
 
-function addCurrencyOnCreatedNavigationTarget () {
-	currency = currency + 1;
-	window.alert(currency + " - Trigger: webNavigation.onCreatedNavigationTarget");
-};
+	browser.storage.local.get("stash", items=> {
+		console.log(items.stash.stashCurrency);
+	});
+}
 
 function openPage() {
 	browser.tabs.create({
@@ -27,12 +26,7 @@ function openPage() {
 }
 
 //*****TRIGGERS/LISTENERS*****//
-
 browser.browserAction.onClicked.addListener(openPage);
 
 //triggers when navigating to another web page
-browser.webNavigation.onBeforeNavigate.addListener (addCurrencyOnBeforeNavigate);
-//triggers when user opens a web page via new tab/new window (also triggers onBeforeNavigate)
-browser.webNavigation.onCreatedNavigationTarget.addListener(addCurrencyOnCreatedNavigationTarget);
-
-browser.webNavigation.onCommitted.addListener (addCurrencyOnBeforeNavigate);
+browser.webNavigation.onBeforeNavigate.addListener(addCurrency);
