@@ -6,15 +6,20 @@
 
   "description": "GachaProject",
 
-  "icons": {
-    "48": "icons/icon_joypad.png"
+  "permissions": [
+      "webNavigation", "webRequest", "storage"
+],
+
+  "browser_action": {
+    "browser_style": true,
+    "default_popup": "popups/gachapopup.html",
+    "default_icon": {
+      "16": "icons/icon_joypad.png",
+      "32": "icons/icon_joypad.png"
+  }
   },
 
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["gachaextension.js"]
+  "background": { 
+      "scripts": ["gachaextension.js"]
     }
-  ]
-
 }
