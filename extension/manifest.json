@@ -1,10 +1,10 @@
 {
 
   "manifest_version": 2,
-  "name": "GachaExtension",
+  "name": "GachaProject",
   "version": "1.0",
 
-  "description": "Tracks internet navigation actions to generate virtual currency.",
+  "description": "GachaProject",
 
   "permissions": [
       "webNavigation", "webRequest", "storage"
